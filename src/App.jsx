@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={
             <div class = "homeHeader">
               <h2>Welcome to my portfolio!</h2>
-              <p>This is the Home page — add your intro, skills, or highlights here.</p>
+              <p>This is the Home page</p>
             </div>
           }
         />
