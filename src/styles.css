@@ -1,0 +1,13 @@
+/* Home Page */
+.homeHeader{
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Header Page */
+.header{
+  text-align: center;
+  color: white;
+  background-color: lightblue;
+  padding: 10px;
+}

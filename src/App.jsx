@@ -1,16 +1,30 @@
-import { useState } from 'react'
+import { Routes, Route} from "react-router-dom";
 import Header from './components/Header'
 import Projects from './components/Projects'
+import About from './components/About'
+import Contact from './components/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
       <Header />
-      <Projects />
+
+      {/* Routes for other pages */}
+      <Routes>
+        <Route path="/" element={
+            <div class = "homeHeader">
+              <h2>Welcome to my portfolio!</h2>
+              <p>This is the Home page — add your intro, skills, or highlights here.</p>
+            </div>
+          }
+        />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
     </div>
   )
 }
 
-export default App
+export default App;
