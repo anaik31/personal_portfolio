@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap');
+
+body {
+  font-family: "Inknut Antiqua", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Home Page */
 .homeHeader{
   text-align: center;
@@ -9,5 +17,5 @@
   text-align: center;
   color: white;
   background-color: #066bcd;
-  padding: 10px;
+  padding: 3px;
 }
