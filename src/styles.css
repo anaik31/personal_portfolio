@@ -12,6 +12,11 @@ body {
   margin-top: 50px;
 }
 
+.portfolioPicture{
+  width: 300px;
+  border-radius: 10px;
+}
+
 /* Header Page */
 .header{
   text-align: center;

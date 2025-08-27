@@ -12,9 +12,10 @@ function App() {
       {/* Routes for other pages */}
       <Routes>
         <Route path="/" element={
-            <div class = "homeHeader">
+            <div className = "homeHeader">
+              <img className = "portfolioPicture" src = "../portfoliopic.jpg" description = "portfolio picture" alt = "porfolioHomePicture"></img>
               <h2>Welcome to my portfolio!</h2>
-              <p>This is the Home page</p>
+              <p>This is the Home page<br/>Use the nav links to view other pages</p>
             </div>
           }
         />
