@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap');
 
+
 body {
   font-family: "Inknut Antiqua", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Header Page */
+.header{
+  text-align: center;
+  color: white;
+  background-color: #066bcd;
+  padding: 3px;
 }
 
 /* Home Page */
@@ -17,10 +26,18 @@ body {
   border-radius: 10px;
 }
 
-/* Header Page */
-.header{
+/* About Page */
+.aboutContainer{
   text-align: center;
-  color: white;
-  background-color: #066bcd;
-  padding: 3px;
+}
+
+.aboutHeader{
+  text-align: center;
+  margin-top: 10%;
+}
+
+.aboutPicture{
+  width: 500px;
+  border-radius: 10px;
+  margin-bottom: 5%;
 }
