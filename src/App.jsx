@@ -11,17 +11,17 @@ function App() {
 
       {/* Routes for other pages */}
       <Routes>
-        <Route path="/" element={
+        <Route path="/portfolio" element={
             <div className = "homeHeader">
-              <img className = "portfolioPicture" src = "../portfoliopic.jpg" description = "portfolio picture" alt = "porfolioHomePicture"></img>
+              <img className = "portfolioPicture" src = "img/portfoliopic.jpg" description = "portfolio picture" alt = "porfolioHomePicture"></img>
               <h2>Welcome to my portfolio!</h2>
               <p>This is the Home page<br/>Use the nav links to view other pages</p>
             </div>
           }
         />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="portfolio/about" element={<About />} />
+        <Route path="portfolio/projects" element={<Projects />} />
+        <Route path="portfolio/contact" element={<Contact />} />
       </Routes>
 
     </div>

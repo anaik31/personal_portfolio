@@ -10,6 +10,13 @@ import SchoolIcon from "@mui/icons-material/School";
 import WorkIcon from "@mui/icons-material/Work";
 import LaptopIcon from "@mui/icons-material/Laptop";
 import Typography from "@mui/material/Typography";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: '"Montserrat", sans-serif',
+  },
+});
 
 function About() {
   return (
@@ -20,10 +27,11 @@ function About() {
     problem-solving and continuously improving my skills to tackle
     challenging projects.</h4>
     
-    <img className = "aboutPicture" src = "../aboutpic.JPG" description = "aboutPicture" alt = "aboutPicture"></img>
+    <img className = "aboutPicture" src = "img/aboutpic.JPEG" description = "aboutPicture" alt = "aboutPicture"></img>
 
     <h3>My Timeline</h3>
 
+    <ThemeProvider theme={theme}>
     <Timeline position="alternate">
       {/* Education */}
       <TimelineItem>
@@ -109,6 +117,7 @@ function About() {
         </TimelineContent>
       </TimelineItem>
     </Timeline>
+    </ThemeProvider>
     </div>
   );
 }

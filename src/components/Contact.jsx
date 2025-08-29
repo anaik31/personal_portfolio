@@ -3,10 +3,10 @@ import { Box, TextField, Button, Typography } from "@mui/material";
 import emailjs from "@emailjs/browser";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-// Create theme at the top level
+
 const theme = createTheme({
   typography: {
-    fontFamily: '"Inknut Antiqua", serif',
+    fontFamily: '"Montserrat", sans-serif',
   },
 });
 

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 /* All Pages */
 body {
-  font-family: "Inknut Antiqua", serif;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -13,7 +13,11 @@ body {
   text-align: center;
   color: white;
   background-color: #066bcd;
-  padding: 3px;
+  padding: 10px;
+}
+
+.headerTitle{
+  margin-bottom: 2%;
 }
 
 /* Home Page */
@@ -38,14 +42,14 @@ body {
 }
 
 .aboutParagraph{
-  width: 70%;
+  width: 50%;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 3%;
 }
 
 .aboutPicture{
-  width: 500px;
+  width: 300px;
   border-radius: 10px;
   margin-bottom: 5%;
 }

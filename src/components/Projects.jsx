@@ -1,24 +1,32 @@
 import React, { useState } from "react";
 import { Box, Card, CardContent, CardMedia, Typography, Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+
+const theme = createTheme({
+  typography: {
+    fontFamily: '"Montserrat", sans-serif',
+  },
+});
 
 const projects = [
   {
     title: "Expense Tracker",
     description: "Tracks income and expenses using React, Node.js, MySQL.",
-    image: "../expensetracker.png",
+    image: "img/expensetracker.png",
     github: "https://github.com/anaik31/expense-tracker-react",
   },
   {
     title: "Portfolio Website",
     description: "Personal portfolio built with React and MUI.",
-    image: "../personalportfolio.jpg",
+    image: "img/personalportfolio.jpg",
     github: "https://github.com/arpeetnaik/personal-portfolio",
   },
   {
     title: "Rock, Paper, Scissors",
     description: "A simple rock, paper, scissors game with JavaScript(JS) functionality.",
-    image: "../rockpaperscissors.png",
+    image: "img/rockpaperscissors.png",
     github: "https://github.com/anaik31/rock-paper-scissors",
   },
 ];
@@ -42,6 +50,7 @@ function Projects() {
 
     <div>
       <h2 className = "projectHeader">My Projects</h2>
+    <ThemeProvider theme={theme}>
     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3, justifyContent: "center", p: 3 }}>
       {projects.map((project, index) => (
         <Card key={index} sx={{ width: 300, cursor: "pointer" }} onClick={() => handleOpen(project)}>
@@ -70,6 +79,7 @@ function Projects() {
         </Dialog>
       )}
     </Box>
+    </ThemeProvider>
     </div>
   );
 }
