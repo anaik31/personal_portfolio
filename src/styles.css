@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&display=swap');
 
 
+/* All Pages */
 body {
   font-family: "Inknut Antiqua", serif;
   font-weight: 400;
@@ -33,11 +34,25 @@ body {
 
 .aboutHeader{
   text-align: center;
-  margin-top: 10%;
+  margin-top: 7%;
+}
+
+.aboutParagraph{
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 3%;
 }
 
 .aboutPicture{
   width: 500px;
   border-radius: 10px;
   margin-bottom: 5%;
+}
+
+/* Projects Page*/
+
+.projectHeader{
+  text-align: center;
+  margin-top: 7%;
 }
