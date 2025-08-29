@@ -34,6 +34,7 @@ body {
 /* About Page */
 .aboutContainer{
   text-align: center;
+  margin-bottom: 8%;
 }
 
 .aboutHeader{
