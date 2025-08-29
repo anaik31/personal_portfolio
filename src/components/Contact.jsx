@@ -14,6 +14,7 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     company: "",
+    email: "",
     message: ""
   });
 
@@ -35,7 +36,7 @@ function Contact() {
       (result) => {
         console.log(result.text);
         setSuccess("Message sent successfully!");
-        setFormData({ name: "", company: "", message: "" });
+        setFormData({ name: "", company: "", email: "", message: "" });
       },
       (error) => {
         console.log(error.text);
@@ -61,11 +62,21 @@ function Contact() {
             />
             <TextField
               fullWidth
+              label="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              margin="normal"
+              required
+            />
+            <TextField
+              fullWidth
               label="Company"
               name="company"
               value={formData.company}
               onChange={handleChange}
               margin="normal"
+              required
             />
             <TextField
               fullWidth

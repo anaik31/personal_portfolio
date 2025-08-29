@@ -19,7 +19,7 @@ body {
 /* Home Page */
 .homeHeader{
   text-align: center;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .portfolioPicture{
@@ -34,7 +34,7 @@ body {
 
 .aboutHeader{
   text-align: center;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .aboutParagraph{
@@ -54,12 +54,12 @@ body {
 
 .projectHeader{
   text-align: center;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 /* Contact Page */
 
 .contactHeader{
   text-align: center;
-  margin-top: 5%;
+  margin-top: 3%;
 }
