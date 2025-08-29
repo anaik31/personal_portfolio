@@ -1,6 +1,79 @@
+import React, { useState } from "react";
+import { Box, TextField, Button, Typography } from "@mui/material";
+import emailjs from "@emailjs/browser";
+
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    message: ""
+  });
+
+  const [success, setSuccess] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      "service_y17csej",
+      "template_zzimp0u",
+      formData,
+      "8hZ-f8P_4LfB3xGqJ"
+    ).then(
+      (result) => {
+        console.log(result.text);
+        setSuccess("Message sent successfully!");
+        setFormData({ name: "", company: "", message: "" });
+      },
+      (error) => {
+        console.log(error.text);
+        setSuccess("Failed to send message. Try again.");
+      }
+    );
+  };
+
   return (
-    <p>This is Contact Page.</p>
+    <Box sx={{ width: 400, margin: "auto", mt: 5 }}>
+      <Typography variant="h4" gutterBottom>Contact Me</Typography>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          fullWidth
+          label="Name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          margin="normal"
+          required
+        />
+        <TextField
+          fullWidth
+          label="Company"
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          margin="normal"
+        />
+        <TextField
+          fullWidth
+          label="Message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          multiline
+          rows={4}
+          margin="normal"
+          required
+        />
+        <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
+          Send
+        </Button>
+      </form>
+      {success && <Typography sx={{ mt: 2 }}>{success}</Typography>}
+    </Box>
   );
 }
 
