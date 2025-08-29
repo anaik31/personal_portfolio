@@ -49,37 +49,82 @@ function Projects() {
   return (
 
     <div>
-      <h2 className = "projectHeader">My Projects</h2>
-    <ThemeProvider theme={theme}>
-    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3, justifyContent: "center", p: 3 }}>
-      {projects.map((project, index) => (
-        <Card key={index} sx={{ width: 300, cursor: "pointer" }} onClick={() => handleOpen(project)}>
-          <CardMedia component="img" height="140" image={project.image} alt={project.title} />
-          <CardContent>
-            <Typography variant="h6">{project.title}</Typography>
-            <Typography variant="body2" color="text.secondary">{project.description}</Typography>
-          </CardContent>
-        </Card>
-      ))}
+      <h2 className="projectHeader">My Projects</h2>
+      <ThemeProvider theme={theme}>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3, justifyContent: "center", p: 3 }}>
+          {projects.map((project, index) => (
+            <Card key={index} sx={{ width: 300, cursor: "pointer" }} onClick={() => handleOpen(project)}>
+              <CardMedia component="img" height="140" image={project.image} alt={project.title} />
+              <CardContent>
+                <Typography variant="h6">{project.title}</Typography>
+                <Typography variant="body2" color="text.secondary">{project.description}</Typography>
+              </CardContent>
+            </Card>
+          ))}
 
-      {/* Modal */}
-      {selectedProject && (
-        <Dialog open={openModal} onClose={handleClose}>
-          <DialogTitle>{selectedProject.title}</DialogTitle>
-          <DialogContent>
-            <img src={selectedProject.image} alt={selectedProject.title} style={{ width: "100%", marginBottom: "1rem" }} />
-            <Typography>{selectedProject.description}</Typography>
-          </DialogContent>
-          <DialogActions>
-            <Button component="a" href={selectedProject.github} target="_blank" startIcon={<GitHubIcon />}>
-              GitHub
-            </Button>
-            <Button onClick={handleClose}>Close</Button>
-          </DialogActions>
-        </Dialog>
-      )}
-    </Box>
-    </ThemeProvider>
+          {/* Modal */}
+          {selectedProject && (
+            <Dialog open={openModal} onClose={handleClose}>
+              <DialogTitle>{selectedProject.title}</DialogTitle>
+              <DialogContent>
+                <img src={selectedProject.image} alt={selectedProject.title} style={{ width: "100%", marginBottom: "1rem" }} />
+                <Typography>{selectedProject.description}</Typography>
+              </DialogContent>
+              <DialogActions>
+                <Button component="a" href={selectedProject.github} target="_blank" startIcon={<GitHubIcon />}>
+                  GitHub
+                </Button>
+                <Button onClick={handleClose}>Close</Button>
+              </DialogActions>
+            </Dialog>
+          )}
+        </Box>
+      </ThemeProvider>
+
+      <h2 className="projectHeader">Skills</h2>
+      <div className="skillsContainer">
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="React" />
+          <p>React.js</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000" alt="JavaScript" />
+          <p>JavaScript</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="HTML5" />
+          <p>HTML5</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=7gdY5qNXaKC0&format=png&color=000000" alt="CSS" />
+          <p>CSS</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" alt="GitHub" />
+          <p>GitHub</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=PZQVBAxaueDJ&format=png&color=000000" alt="Express" />
+          <p>Express.js</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=6X0_MfxrYEea&format=png&color=000000" alt="MySQL" />
+          <p>mySQL</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=45348&format=png&color=000000" alt="Selenium" />
+          <p>Selenium</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000" alt="Python" />
+          <p>Python</p>
+        </div>
+        <div className="skillBubble">
+          <img src="https://img.icons8.com/?size=100&id=55497&format=png&color=000000" alt="RESTful API's" />
+          <p>RESTful API's</p>
+        </div>
+      </div>
+
     </div>
   );
 }

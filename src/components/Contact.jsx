@@ -96,6 +96,16 @@ function Contact() {
           {success && <Typography sx={{ mt: 2 }}>{success}</Typography>}
         </Box>
       </ThemeProvider>
+
+      <div className="skillBubble">
+        <a href="https://www.linkedin.com/in/arpeet-naik/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
+            alt="LinkedIn"
+          />
+        </a>
+        <p>LinkedIn</p>
+      </div>
     </div>
   );
 }
