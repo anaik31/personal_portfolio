@@ -47,7 +47,10 @@ function Contact() {
 
   return (
     <div>
-  <h2 className="contactHeader slideDown delay-1">Contact Me!</h2>
+    <div className="contactHeader slideDown delay-1">
+  <h2>Contact Me!</h2>
+  <h4>Filling this out and submitting will send me an email!</h4>
+  </div>
   <ThemeProvider theme={theme}>
     <Box className="slideDown delay-2" sx={{ width: 400, margin: "auto", mt: 5 }}>
       <form onSubmit={handleSubmit}>

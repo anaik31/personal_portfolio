@@ -19,7 +19,8 @@ function App() {
             <img className="portfolioPicture slideDown delay-2" src="img/portfoliopic.jpg" alt="portfolioHomePicture" />
             <h2 className="slideDown delay-3">Welcome to my portfolio!</h2>
             <p className="slideDown delay-4">
-              This is the Home page<br />Use the nav links to view other pages
+              Visit the other pages to learn more about me!<br/> Recruiters can reach
+              out by filling out the contact form.
             </p>
           </div>
 
