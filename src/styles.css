@@ -9,47 +9,81 @@ body {
 }
 
 /* Header Page */
-.header{
+.header {
   text-align: center;
   color: white;
   background-color: #066bcd;
   padding: 10px;
 }
 
-.headerTitle{
+.headerTitle {
   margin-bottom: 2%;
 }
 
+.headerLink {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  /* needed for underline effect */
+}
+
+.headerLink:hover {
+  color: #ffd700;
+  /* gold color on hover */
+  transform: scale(1.1);
+  /* slight pop effect */
+}
+
+/* Optional: animated underline */
+.headerLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.headerLink:hover::after {
+  width: 100%;
+}
+
+
 /* Home Page */
-.homeHeader{
+.homeHeader {
   text-align: center;
   margin-top: 3%;
 }
 
-.portfolioPicture{
+.portfolioPicture {
   width: 300px;
   border-radius: 10px;
 }
 
 /* About Page */
-.aboutContainer{
+.aboutContainer {
   text-align: center;
   margin-bottom: 8%;
 }
 
-.aboutHeader{
+.aboutHeader {
   text-align: center;
   margin-top: 3%;
 }
 
-.aboutParagraph{
+.aboutParagraph {
   width: 50%;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 3%;
 }
 
-.aboutPicture{
+.aboutPicture {
   width: 300px;
   border-radius: 10px;
   margin-bottom: 5%;
@@ -64,17 +98,23 @@ body {
   border: none;
   cursor: pointer;
   margin-bottom: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resumeButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .imageContainer {
   display: flex;
-  flex-direction: column; 
-  align-items: center;   
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Projects Page*/
 
-.projectHeader{
+.projectHeader {
   text-align: center;
   margin-top: 3%;
 }
@@ -96,17 +136,18 @@ body {
 }
 
 .skillBubble img {
-  width: 80px;       
+  width: 80px;
   height: 80px;
   border-radius: 50%;
   padding: 10px;
-  background-color: #f0f0f0; 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skillBubble img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -115,10 +156,64 @@ body {
   font-weight: bold;
 }
 
+.projectCard {
+  width: 300px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 16px;
+  /* rounded corners like skillBubble */
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.projectCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.projectCard img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.projectCardContent {
+  padding: 16px;
+}
+
+.projectCardContent h6 {
+  margin: 0 0 8px 0;
+}
+
+.projectCardContent p {
+  margin: 0;
+  color: #555;
+}
+
+.projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* space between cards */
+  justify-content: center;
+  /* centers the cards horizontally */
+  padding: 20px;
+}
+
+
+
+
 
 /* Contact Page */
 
-.contactHeader{
+.contactHeader {
   text-align: center;
   margin-top: 3%;
 }

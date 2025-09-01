@@ -51,15 +51,15 @@ function Projects() {
     <div>
       <h2 className="projectHeader">My Projects</h2>
       <ThemeProvider theme={theme}>
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3, justifyContent: "center", p: 3 }}>
+        <Box className="projectsContainer">
           {projects.map((project, index) => (
-            <Card key={index} sx={{ width: 300, cursor: "pointer" }} onClick={() => handleOpen(project)}>
-              <CardMedia component="img" height="140" image={project.image} alt={project.title} />
-              <CardContent>
-                <Typography variant="h6">{project.title}</Typography>
-                <Typography variant="body2" color="text.secondary">{project.description}</Typography>
-              </CardContent>
-            </Card>
+            <div key={index} className="projectCard" onClick={() => handleOpen(project)}>
+              <img src={project.image} alt={project.title} />
+              <div className="projectCardContent">
+                <h6>{project.title}</h6>
+                <p>{project.description}</p>
+              </div>
+            </div>
           ))}
 
           {/* Modal */}
@@ -79,6 +79,7 @@ function Projects() {
             </Dialog>
           )}
         </Box>
+
       </ThemeProvider>
 
       <h2 className="projectHeader">Skills</h2>
