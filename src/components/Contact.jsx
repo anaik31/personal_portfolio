@@ -47,66 +47,67 @@ function Contact() {
 
   return (
     <div>
-      <h2 className="contactHeader">Contact Me!</h2>
-      <ThemeProvider theme={theme}>
-        <Box sx={{ width: 400, margin: "auto", mt: 5 }}>
-          <form onSubmit={handleSubmit}>
-            <TextField
-              fullWidth
-              label="Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              margin="normal"
-              required
-            />
-            <TextField
-              fullWidth
-              label="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              margin="normal"
-              required
-            />
-            <TextField
-              fullWidth
-              label="Company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              margin="normal"
-              required
-            />
-            <TextField
-              fullWidth
-              label="Message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              multiline
-              rows={4}
-              margin="normal"
-              required
-            />
-            <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
-              Send
-            </Button>
-          </form>
-          {success && <Typography sx={{ mt: 2 }}>{success}</Typography>}
-        </Box>
-      </ThemeProvider>
+  <h2 className="contactHeader slideDown delay-1">Contact Me!</h2>
+  <ThemeProvider theme={theme}>
+    <Box className="slideDown delay-2" sx={{ width: 400, margin: "auto", mt: 5 }}>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          fullWidth
+          label="Name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          margin="normal"
+          required
+        />
+        <TextField
+          fullWidth
+          label="Email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          margin="normal"
+          required
+        />
+        <TextField
+          fullWidth
+          label="Company"
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          margin="normal"
+          required
+        />
+        <TextField
+          fullWidth
+          label="Message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          multiline
+          rows={4}
+          margin="normal"
+          required
+        />
+        <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
+          Send
+        </Button>
+      </form>
+      {success && <Typography sx={{ mt: 2 }}>{success}</Typography>}
+    </Box>
+  </ThemeProvider>
 
-      <div className="skillBubble">
-        <a href="https://www.linkedin.com/in/arpeet-naik/" target="_blank" rel="noopener noreferrer">
-          <img
-            src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
-            alt="LinkedIn"
-          />
-        </a>
-        <p>LinkedIn</p>
-      </div>
-    </div>
+  <div className="skillBubble slideDown delay-3">
+    <a href="https://www.linkedin.com/in/arpeet-naik/" target="_blank" rel="noopener noreferrer">
+      <img
+        src="https://img.icons8.com/?size=100&id=13930&format=png&color=000000"
+        alt="LinkedIn"
+      />
+    </a>
+    <p>LinkedIn</p>
+  </div>
+</div>
+
   );
 }
 

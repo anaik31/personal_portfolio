@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Box, Card, CardContent, CardMedia, Typography, Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
+import { Box, Button, Dialog, DialogTitle, DialogContent, DialogActions, Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
 
 const theme = createTheme({
   typography: {
@@ -31,8 +30,20 @@ const projects = [
   },
 ];
 
+const skills = [
+  { name: "React.js", img: "https://img.icons8.com/?size=100&id=108784&format=png&color=000000" },
+  { name: "JavaScript", img: "https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000" },
+  { name: "HTML5", img: "https://img.icons8.com/?size=100&id=20909&format=png&color=000000" },
+  { name: "CSS", img: "https://img.icons8.com/?size=100&id=7gdY5qNXaKC0&format=png&color=000000" },
+  { name: "GitHub", img: "https://img.icons8.com/?size=100&id=12599&format=png&color=000000" },
+  { name: "Express.js", img: "https://img.icons8.com/?size=100&id=PZQVBAxaueDJ&format=png&color=000000" },
+  { name: "mySQL", img: "https://img.icons8.com/?size=100&id=6X0_MfxrYEea&format=png&color=000000" },
+  { name: "Selenium", img: "https://img.icons8.com/?size=100&id=45348&format=png&color=000000" },
+  { name: "Python", img: "https://img.icons8.com/?size=100&id=13441&format=png&color=000000" },
+  { name: "RESTful API's", img: "https://img.icons8.com/?size=100&id=55497&format=png&color=000000" },
+];
+
 function Projects() {
-  // Hooks must be at the top of the function
   const [openModal, setOpenModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -47,13 +58,16 @@ function Projects() {
   };
 
   return (
-
     <div>
-      <h2 className="projectHeader">My Projects</h2>
+      <h2 className="projectHeader slideDown delay-1">My Projects</h2>
       <ThemeProvider theme={theme}>
         <Box className="projectsContainer">
           {projects.map((project, index) => (
-            <div key={index} className="projectCard" onClick={() => handleOpen(project)}>
+            <div
+              key={index}
+              className={`projectCard slideDown delay-${(index % 5) + 1}`}
+              onClick={() => handleOpen(project)}
+            >
               <img src={project.image} alt={project.title} />
               <div className="projectCardContent">
                 <h6>{project.title}</h6>
@@ -62,16 +76,24 @@ function Projects() {
             </div>
           ))}
 
-          {/* Modal */}
           {selectedProject && (
             <Dialog open={openModal} onClose={handleClose}>
               <DialogTitle>{selectedProject.title}</DialogTitle>
               <DialogContent>
-                <img src={selectedProject.image} alt={selectedProject.title} style={{ width: "100%", marginBottom: "1rem" }} />
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  style={{ width: "100%", marginBottom: "1rem" }}
+                />
                 <Typography>{selectedProject.description}</Typography>
               </DialogContent>
               <DialogActions>
-                <Button component="a" href={selectedProject.github} target="_blank" startIcon={<GitHubIcon />}>
+                <Button
+                  component="a"
+                  href={selectedProject.github}
+                  target="_blank"
+                  startIcon={<GitHubIcon />}
+                >
                   GitHub
                 </Button>
                 <Button onClick={handleClose}>Close</Button>
@@ -79,53 +101,17 @@ function Projects() {
             </Dialog>
           )}
         </Box>
-
       </ThemeProvider>
 
-      <h2 className="projectHeader">Skills</h2>
+      <h2 className="projectHeader slideDown delay-2">Skills</h2>
       <div className="skillsContainer">
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="React" />
-          <p>React.js</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000" alt="JavaScript" />
-          <p>JavaScript</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="HTML5" />
-          <p>HTML5</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=7gdY5qNXaKC0&format=png&color=000000" alt="CSS" />
-          <p>CSS</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" alt="GitHub" />
-          <p>GitHub</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=PZQVBAxaueDJ&format=png&color=000000" alt="Express" />
-          <p>Express.js</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=6X0_MfxrYEea&format=png&color=000000" alt="MySQL" />
-          <p>mySQL</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=45348&format=png&color=000000" alt="Selenium" />
-          <p>Selenium</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000" alt="Python" />
-          <p>Python</p>
-        </div>
-        <div className="skillBubble">
-          <img src="https://img.icons8.com/?size=100&id=55497&format=png&color=000000" alt="RESTful API's" />
-          <p>RESTful API's</p>
-        </div>
+        {skills.map((skill, idx) => (
+          <div key={idx} className={`skillBubble slideDown delay-${(idx % 5) + 1}`}>
+            <img src={skill.img} alt={skill.name} />
+            <p>{skill.name}</p>
+          </div>
+        ))}
       </div>
-
     </div>
   );
 }

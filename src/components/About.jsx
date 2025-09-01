@@ -19,25 +19,29 @@ const theme = createTheme({
 
 function About() {
   return (
-    <div className="aboutContainer">
-      <h2 className="aboutHeader">Hi, my name is Arpeet!</h2>
-      <h4 className="aboutParagraph">I’m a software developer passionate about building
-        full-stack applications and learning emerging technologies. I enjoy
-        problem-solving and continuously improving my skills to tackle
-        challenging projects.</h4>
+    <div className="aboutContainer slideDown delay-1">
+      <h2 className="aboutHeader slideDown delay-2">Hi, my name is Arpeet!</h2>
 
-      <div className="imageContainer">
+      <h4 className="aboutParagraph slideDown delay-3">
+        I’m a software developer passionate about building full-stack applications and learning emerging technologies. I enjoy problem-solving and continuously improving my skills to tackle challenging projects.
+      </h4>
+
+      <div className="imageContainer slideDown delay-4">
         <a href="/portfolio/resume.pdf" download="Arpeet-Naik-Resume.pdf">
-          <button className="resumeButton">Download Resume</button>
+          <button className="resumeButton slideDown delay-4">Download Resume</button>
         </a>
-
-        <img className="aboutPicture" src="img/aboutpic.JPEG" description="aboutPicture" alt="aboutPicture"></img>
+        <img
+          className="aboutPicture slideDown delay-5"
+          src="img/aboutpic.JPEG"
+          description="aboutPicture"
+          alt="aboutPicture"
+        />
       </div>
 
-      <h3>My Timeline</h3>
+      <h3 className="slideDown delay-5">My Timeline</h3>
 
       <ThemeProvider theme={theme}>
-        <Timeline position="alternate">
+        <Timeline className="slideDown delay-5" position="alternate">
           {/* Education */}
           <TimelineItem>
             <TimelineOppositeContent sx={{ m: "auto 0" }} align="right" variant="body2" color="text.secondary">
