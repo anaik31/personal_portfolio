@@ -55,6 +55,23 @@ body {
   margin-bottom: 5%;
 }
 
+.resumeButton {
+  background-color: #066bcd;
+  color: white;
+  border-radius: 10px;
+  padding: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+}
+
 /* Projects Page*/
 
 .projectHeader{
