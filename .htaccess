@@ -1,8 +1,14 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /portfolio/
+
+  # Don’t rewrite index.html
   RewriteRule ^index\.html$ - [L]
+
+  # If file or directory exists, serve it
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Otherwise, redirect everything to index.html
   RewriteRule . /portfolio/index.html [L]
 </IfModule>
